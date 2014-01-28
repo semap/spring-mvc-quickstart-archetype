@@ -138,7 +138,9 @@
 	</bean>
 
 	<bean id="tokenStore"
-		class="org.springframework.security.oauth2.provider.token.InMemoryTokenStore" />
+		class="org.springframework.security.oauth2.provider.token.JdbcTokenStore" >
+		<constructor-arg ref="dataSource" />
+	</bean>
 
 	<bean id="tokenServices"
 		class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
