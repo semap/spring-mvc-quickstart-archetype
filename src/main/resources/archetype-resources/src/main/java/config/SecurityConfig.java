@@ -7,8 +7,9 @@ import org.springframework.security.web.authentication.rememberme.TokenBasedReme
 
 import ${package}.account.UserService;
 
+// by removing "spring-security-oauth2.xml" below, the OAuth2 will be disabled 
 @Configuration
-@ImportResource(value = "classpath:spring-security-context.xml")
+@ImportResource({"classpath:spring-security-oauth2.xml", "classpath:spring-security-context.xml"})
 class SecurityConfig {
 	
 	@Bean
